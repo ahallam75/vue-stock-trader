@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      "sellStock"
+      placeSellOrder: "sellStock"
     }),
     sellStock() {
       const order = {
@@ -52,7 +52,8 @@ export default {
         stockPrice: this.stock.price,
         quantity: this.quantity
       };
-      this.sellStock;
+      this.placeSellOrder(order);
+      this.quantity = 0;
     }
   }
 };
